@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+            <div class="col">
+            <form action="#" onsubmit="renderCard(event)">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="firstname">Name</label><br>
+                        <input type="text" id="name" name="firstname">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Job</label><br>
+                        <input type="text" id="job" name="lastname">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Phone</label><br>
+                        <input type="text" id="telp">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label><br>
+                        <textarea id="address"></textarea> <br><br>
+                    </div>
+
+                    <input type="submit" value="submit">
+                    <input type="reset" value="reset">
+                </fieldset>
+            </form>
+             </div> 
+        <!-- card   -->
+        <script>
+
+                function renderCard(event){
+                    event.preventDefault();
+                    var div = document.createElement('div')
+
+                    var name = document.getElementById('name').value 
+                    var job = document.getElementById('job').value
+                    var email = document.getElementById('email').value
+                    var phone = document.getElementById('telp').value
+                    var address = document.getElementById('address').value 
+
+                    div.innerHTML = `
+                        <div class="card">
+                            <div class="col">
+                                <div class="card-content">
+                                    <div class="head">
+                                        <p class="cardheading">${name}</p>
+                                        <p class="cardheading">${job}</p>
+                                    </div>
+
+                                    <div class="container">
+                                        <P class="cardcontainer">${email}</p>
+                                        <P class="cardcontainer">${telp}</p>
+                                        <P class="cardcontainer">${address}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                document.body.appendChild(div);
+                }
+
+        </script>
+</body>
+</html>
